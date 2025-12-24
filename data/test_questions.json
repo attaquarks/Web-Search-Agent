@@ -1,0 +1,292 @@
+[
+    {
+        "id": 1,
+        "question": "What are the main differences between ReAct and Plan-Execute agent architectures?",
+        "key_points": [
+            "ReAct interleaves reasoning and action in a loop",
+            "ReAct follows think-act-observe pattern",
+            "Plan-Execute separates planning from execution phases",
+            "Plan-Execute creates complete plan upfront before acting",
+            "ReAct is more adaptive to new observations",
+            "Plan-Execute is more structured and predictable"
+        ],
+        "category": "agent_architecture",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 2,
+        "question": "Explain how the ReAct framework works in AI agents.",
+        "key_points": [
+            "interleaves reasoning thoughts and actions",
+            "loop of think then act then observe",
+            "improves interpretability via explicit reasoning traces",
+            "combines chain-of-thought prompting with action execution",
+            "agent generates thought before each action"
+        ],
+        "category": "frameworks",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 3,
+        "question": "What is the current stock price of Tesla (TSLA)?",
+        "key_points": [
+            "provides numerical stock price",
+            "mentions currency (USD or dollars)",
+            "indicates current or recent timestamp"
+        ],
+        "category": "real_time_data",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Who won the Nobel Prize in Physics in 2024?",
+        "key_points": [
+            "John Hopfield",
+            "Geoffrey Hinton",
+            "awarded for discoveries in machine learning",
+            "artificial neural networks",
+            "2024"
+        ],
+        "category": "recent_events",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What are the key components of a long-term memory system for AI agents?",
+        "key_points": [
+            "storage mechanism for past interactions",
+            "retrieval system to find relevant memories",
+            "embeddings or semantic search capability",
+            "memory consolidation or summarization",
+            "relevance scoring or ranking"
+        ],
+        "category": "memory_systems",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 6,
+        "question": "Search my memory for information about machine learning frameworks and summarize what I know.",
+        "key_points": [
+            "retrieves information from memory store",
+            "mentions specific frameworks or concepts",
+            "provides coherent summary",
+            "indicates if no relevant memories found"
+        ],
+        "category": "memory_retrieval",
+        "requires_external_info": false,
+        "expected_tool_usage": [
+            "search_memory"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What were the major AI breakthroughs announced at NeurIPS 2024?",
+        "key_points": [
+            "mentions specific papers or techniques",
+            "references NeurIPS 2024 conference",
+            "describes breakthrough nature",
+            "includes details about models or methods"
+        ],
+        "category": "recent_events",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Explain the concept of tool use in language model agents.",
+        "key_points": [
+            "agents can invoke external functions or APIs",
+            "tools extend capabilities beyond text generation",
+            "requires parsing tool calls from model output",
+            "includes observation feedback loop",
+            "examples include calculators, search engines, databases"
+        ],
+        "category": "agent_capabilities",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 9,
+        "question": "What is the current weather in New York City?",
+        "key_points": [
+            "provides temperature information",
+            "mentions weather conditions",
+            "references New York City location",
+            "indicates current or recent time"
+        ],
+        "category": "real_time_data",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "How do embedding models work for semantic search?",
+        "key_points": [
+            "converts text into numerical vectors",
+            "captures semantic meaning in vector space",
+            "similar meanings have similar vectors",
+            "uses cosine similarity or distance metrics",
+            "enables finding related content"
+        ],
+        "category": "technical_concepts",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 11,
+        "question": "Find recent news about OpenAI's latest model releases.",
+        "key_points": [
+            "mentions specific model names",
+            "includes release dates or timeframes",
+            "describes capabilities or improvements",
+            "references OpenAI"
+        ],
+        "category": "recent_events",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is retrieval-augmented generation (RAG)?",
+        "key_points": [
+            "combines retrieval with text generation",
+            "retrieves relevant documents first",
+            "uses retrieved context for generation",
+            "improves factual accuracy",
+            "reduces hallucination"
+        ],
+        "category": "technical_concepts",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 13,
+        "question": "Store this information in memory: The capital of France is Paris, known for the Eiffel Tower.",
+        "key_points": [
+            "acknowledges storage request",
+            "confirms information was stored",
+            "mentions memory or storage system"
+        ],
+        "category": "memory_storage",
+        "requires_external_info": false,
+        "expected_tool_usage": [
+            "store_memory"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What are the main challenges in building autonomous AI agents?",
+        "key_points": [
+            "planning and reasoning complexity",
+            "tool selection and usage",
+            "error recovery and robustness",
+            "evaluation and benchmarking difficulty",
+            "computational cost or latency"
+        ],
+        "category": "agent_challenges",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 15,
+        "question": "Who is the current CEO of Microsoft?",
+        "key_points": [
+            "Satya Nadella",
+            "Microsoft",
+            "CEO"
+        ],
+        "category": "factual_current",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "Compare the performance of Claude 3.5 Sonnet vs GPT-4 on coding tasks based on recent benchmarks.",
+        "key_points": [
+            "mentions specific benchmark names or scores",
+            "compares both models",
+            "references coding or programming tasks",
+            "includes quantitative results"
+        ],
+        "category": "model_comparison",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is prompt engineering and why is it important?",
+        "key_points": [
+            "designing effective prompts for language models",
+            "improves model output quality",
+            "includes techniques like few-shot examples",
+            "affects model behavior and capabilities",
+            "critical for getting desired results"
+        ],
+        "category": "technical_concepts",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    },
+    {
+        "id": 18,
+        "question": "Search memory for any stored information about European capitals and list them.",
+        "key_points": [
+            "searches memory store",
+            "retrieves capital city information",
+            "lists multiple capitals if available",
+            "indicates if no information found"
+        ],
+        "category": "memory_retrieval",
+        "requires_external_info": false,
+        "expected_tool_usage": [
+            "search_memory"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What is the latest version of Python and when was it released?",
+        "key_points": [
+            "specific version number",
+            "Python programming language",
+            "release date or timeframe",
+            "mentions it is the latest or current version"
+        ],
+        "category": "software_versions",
+        "requires_external_info": true,
+        "expected_tool_usage": [
+            "web_search"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "Explain the difference between zero-shot, one-shot, and few-shot learning.",
+        "key_points": [
+            "zero-shot means no examples provided",
+            "one-shot means single example provided",
+            "few-shot means multiple examples provided",
+            "relates to in-context learning",
+            "affects model performance"
+        ],
+        "category": "ml_concepts",
+        "requires_external_info": false,
+        "expected_tool_usage": []
+    }
+]

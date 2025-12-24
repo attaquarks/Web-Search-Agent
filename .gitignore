@@ -1,0 +1,26 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+*.log
+
+# Data and Results
+data/memory_store.json
+results/
+
+# Frontend (Nested)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env*
+frontend/.vercel/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
