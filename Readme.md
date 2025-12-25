@@ -1,4 +1,4 @@
-# AI Agent System: Multi-Agent Search & Research Platform
+# AI Agent System: Multi-Agent Web Search & Research Platform
 
 A comprehensive platform designed to demonstrate and evaluate various AI agent architectures. This project implements multiple search-oriented agent patterns, providing both a backend evaluation framework and a modern web-based interaction interface.
 
