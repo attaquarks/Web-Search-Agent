@@ -1,64 +1,114 @@
-# AI Agent System: Multi-Agent Web Search & Research Platform
+# AI Agent Web Search and Research Platform
 
-A comprehensive platform designed to demonstrate and evaluate various AI agent architectures. This project implements multiple search-oriented agent patterns, providing both a backend evaluation framework and a modern web-based interaction interface.
+This repository implements a multi-agent research platform for comparing AI agent reasoning patterns. It includes backend agent implementations, benchmark data, stored evaluation results, and an API layer that can support a web-based playground or dashboard.
 
-## 🚀 Overview
+## Overview
 
-This system allows you to compare different reasoning patterns in AI agents. Each agent is designed to solve complex research tasks by interacting with web search tools and a long-term memory store. The platform provides real-time visualization of the agent's "thought process" and a detailed dashboard for benchmarking performance.
+The project explores how different agent architectures perform on search and research tasks. Agents can use web-search tools, local memory, retrieval, and planning loops, then produce answers with traceable reasoning behavior and measurable benchmark results.
 
-## 🤖 Supported Agents
+## Supported Agent Patterns
 
-- **One-Shot**: Direct answer generation for simple queries.
-- **Simple RAG**: Retrieval-Augmented Generation using local knowledge.
-- **ReAct**: An iterative "Reason + Act" pattern for multi-step tasks.
-- **Plan-Execute**: Strategic planning followed by sequential execution.
-- **Plan-Execute + Memory**: Advanced planning with long-term memory retrieval and persistence.
+| Agent | Description |
+|---|---|
+| One-Shot | Direct answer generation for simpler queries |
+| Simple RAG | Retrieval-augmented answering over local/contextual data |
+| ReAct | Iterative reasoning plus tool use |
+| Plan-Execute | Creates a plan, then executes steps sequentially |
+| Plan-Execute + Memory | Uses long-term memory retrieval and persistence during planning/execution |
 
-## ✨ Key Features
+## Features
 
-- **Interactive Playground**: Chat with any agent and switch between them in real-time.
-- **Reasoning Trajectory**: Live view of an agent's internal thoughts, tool calls, and observations.
-- **Memory Inspector**: Visualize how agents retrieve and store contextual information.
-- **Evaluation Dashboard**: Comprehensive metrics (F1 Score, Latency, Tool Efficiency) visualized through tables and charts.
-- **Benchmarking Suite**: Automatic evaluation of agents against standardized question sets.
+- Multiple agent implementations behind a shared structure.
+- Web-search and retrieval tool integration.
+- JSON-backed memory store for experimentation.
+- Benchmark runner for comparing answer quality and efficiency.
+- Stored result files for each agent type.
+- FastAPI bridge for serving agent interactions through an API.
+- Frontend-ready structure for chat/playground and evaluation dashboards.
 
-## 🛠️ Technology Stack
+## Tech Stack
 
-- **Backend**: Python, FastAPI, LangChain, OpenRouter (LLM API), FAISS/ChromaDB (Vector Stores).
-- **Frontend**: Next.js 14, Tailwind CSS 4, Recharts, Lucide React.
-- **Storage**: JSON-based long-term memory and result persistence.
+- Python
+- FastAPI / Uvicorn
+- LangChain
+- Tavily search
+- FAISS / ChromaDB
+- sentence-transformers
+- pandas, NumPy, Pydantic
 
-## 📋 Quick Start
+## Repository Structure
 
-### 1. Prerequisites
-- Python 3.8+
-- Node.js 18+
-- OpenRouter API Key in a `.env` file (`OPENROUTER_API_KEY=...`)
+```text
+api_server.py                 FastAPI bridge for agent interaction
+src/
+  main.py                     CLI / orchestration entry point
+  benchmark.py                Evaluation runner
+  memory.py                   Long-term memory helpers
+  tools.py                    Search/retrieval tools
+  agents/
+    one_shot.py
+    simple_rag.py
+    react_agent.py
+    plan_execute.py
+    plan_execute_memory.py
+data/
+  test_questions.json         Benchmark questions
+  memory_store.json           Local memory store
+results/
+  comparison_results.json     Aggregated benchmark comparison
+  results_*.json              Per-agent evaluation outputs
+frontend/                     Optional web interface if present in full checkout
+```
 
-### 2. Backend & API Setup
+## Installation
+
 ```bash
-# Install dependencies
+git clone https://github.com/attaquarks/Web-Search-Agent.git
+cd Web-Search-Agent
+python -m venv .venv
+.venv\\Scripts\\activate
 pip install -r requirements.txt
+```
 
-# Start the API server
+On macOS/Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Configuration
+
+Create a `.env` file with the required keys for the providers you use:
+
+```env
+OPENROUTER_API_KEY=your_openrouter_key
+TAVILY_API_KEY=your_tavily_key
+```
+
+Do not commit real API keys.
+
+## Run the API
+
+```bash
 python api_server.py
 ```
 
-### 3. Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
+Default API:
+
+```text
+http://localhost:8000
 ```
 
-The application will be available at `http://localhost:3000` and the API at `http://localhost:8000`.
+## Run Benchmarks
 
-## 📁 Project Structure
+```bash
+python src/benchmark.py
+```
 
-- `src/`: Core logic for agents, tools, and evaluation.
-- `api_server.py`: FastAPI bridge between backend agents and the web UI.
-- `frontend/`: Next.js application (Chat and Dashboard).
-- `results/`: Cached benchmarking results for all agents.
-- `data/`: Evaluation questions and memory storage.
+Benchmark outputs are written to `results/`.
 
----
+## Project Status
+
+This repository is an agent-systems experimentation platform. It is useful for comparing planning, tool-use, retrieval, and memory strategies under a shared benchmark setup.
